@@ -65,8 +65,9 @@ with sync_playwright() as p:
         "https://discord.com/channels/1106744790655176707/1521877345831485640",
     ]
     time.sleep(10)
+    end_time = time.time() + (2 * 60 * 60) + (54 * 60)
 
-    while True:
+    while time.time() < end_time:
         for u in urls:
             time.sleep(3)
             page.goto(u)
