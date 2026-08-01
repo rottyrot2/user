@@ -69,15 +69,15 @@ with sync_playwright() as p:
 
     while time.time() < end_time:
         for u in urls:
-            time.sleep(3)
-            page.goto(u)
+            time.sleep(10)
             try:
-                page.get_by_role("textbox").fill("18f I am new to discord. Text me if you wanna be friends.")
-                page.keyboard.press("Enter")
+              page.goto(u)
+              page.get_by_role("textbox").fill("18f I am new to discord. Text me if you wanna be friends.")
+              page.keyboard.press("Enter")
             except:
                 pass
-            time.sleep(3)
-        time.sleep(500)
+            time.sleep(10)
+        time.sleep(550)
     
 sb.quit()
     
